@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  komediantndp.api:
+    build:
+      context: ./backend
+    ports:
+      - "3000:3000"
+    networks:
+      - private
+  nginx:
+    build:
+      context: ./nginx
+    ports:
+      - "80:80"
+    networks:
+      - private
+networks:
+  private:
